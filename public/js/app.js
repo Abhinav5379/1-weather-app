@@ -24,8 +24,8 @@ messageTwo.textContent=''
 weatherForm.addEventListener('submit',(e)=>{
     e.preventDefault()
     const location=search.value
-    fetch('http://localhost:3000/weather?address='+location).then((response)=>{
-    response.json().then((data)=>{
+    fetch('/weather?address='+location).then((response)=>{
+    response.json().then((data)=>{   //heroku dont know port 3000 so changing it yo /weather?----
         if(data.error){
              console.log(error)
         }else{
